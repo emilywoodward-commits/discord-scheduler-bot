@@ -1,0 +1,15 @@
+version: 2
+builds:
+  - src: .
+    use: python
+    name: discord-scheduler-bot
+services:
+  - type: web
+    name: discord-scheduler-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python discord_scheduler_bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.16
